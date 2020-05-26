@@ -1,0 +1,25 @@
+{
+	"name": {
+		"zh-cn": "Mind+实用工具箱",
+		"en": "Mind+ toolbox"
+	},
+	"description": {
+		"zh-cn": "集成了很多常用的功能，例如去小数，进制转换功能等",
+		"en": "Integrates many commonly used functions, such as decimal, hex conversion function, etc."
+	},
+	"author": "liliang",
+	"email": "969316753@qq.com",
+	"license": "MIT",
+	"isBoard": false,
+	"id": "toolbox",
+	"platform": ["win", "mac", "web"],
+	"version": "0.0.1",
+	"asset": {
+		"arduinoC": {
+			"dir": "arduinoC/",
+			"version": "0.0.1",
+			"board": ["microbit", "esp32","arduino","arduinonano","leonardo","mega2560"],
+			"main": "main.ts"
+		}
+	}
+}
