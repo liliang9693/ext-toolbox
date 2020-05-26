@@ -29,8 +29,8 @@ enum BTN {
 
 //% color="#1ca2e9" iconWidth=50 iconHeight=40
 namespace toolbox {
-    //% block="取整 [FLOAT]" blockType="reporter"
-    //% FLOAT.shadow="number" 
+    //% block="int [FLOAT]" blockType="reporter"
+    //% FLOAT.shadow="number"  FLOAT.default="123.321"
     export function changeInt(parameter: any, block: any) {
         let flt=parameter.FLOAT.code;
         Generator.addCode([`int(${flt})`,Generator.ORDER_UNARY_POSTFIX]);

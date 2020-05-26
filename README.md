@@ -1,4 +1,4 @@
-# I2C OLED-2864 screen
+# toolbox 实用工具箱
 
 
 ![](./arduinoC/_images/featured.png)
@@ -14,16 +14,14 @@
 * [Supported targets](#Supportedtargets)
 
 ## URL
-* Project URL : ```https://github.com/DFRobot/ext-oled12864```
+* Project URL : ```https://github.com/liliang9693/ext-toolbox```
 
 * Tutorial URL : ```https://mindplus.dfrobot.com.cn/extensions-user```
 
-* Get a purchase connection: [store](https://www.dfrobot.com/).
+
 
 ## Summary
-Support different drawings in the screen, including point, line, circle, rectangle, triangle,rounded rectangle and some commands.
-Support English characters and character library chips of DFRobot modules.
-IIC: the redraw rate is more than 30 frames per second when redrawed by ESP series controllers
+Mind+实用工具扩展，将添加各种常用的功能，例如取整数，进制转换等
 
 ## Blocks
 
@@ -43,10 +41,10 @@ MIT
 
 MCU                | JavaScript    | Arduino   | MicroPython    | Remarks
 ------------------ | :----------: | :----------: | :---------: | -----
+arduino        |             |        √      |             | 
 micro:bit        |             |       √       |             | 
 mpython        |             |        √      |             | 
 
 
 ## Release Logs
 * V0.0.1  Basic functions completed.
-* V0.0.2  Revised according to V1.6.2 RC2.0
