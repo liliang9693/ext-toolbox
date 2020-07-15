@@ -26,6 +26,14 @@ enum BTN {
     AB
 }
 
+enum PINMODE {
+    //% block="INPUT"
+    INPUT,
+    //% block="OUTPUT"
+    OUTPUT,
+    //% block="INPUT_PULLUP"
+    INPUT_PULLUP
+}
 
 //% color="#1ca2e9" iconWidth=50 iconHeight=40
 namespace toolbox {
@@ -36,10 +44,22 @@ namespace toolbox {
         Generator.addCode([`int(${flt})`,Generator.ORDER_UNARY_POSTFIX]);
 
     }
-
-
+    
     //% block="---"
     export function noteSep1() {
+
+    }
+
+    //% block="set pin [PININPUT] pinMode [PINMODE]" blockType="command"
+    //% PININPUT.shadow="string" PININPUT.defl="2"
+    //% PINMODE.shadow="dropdown" PINMODE.options="PINMODE"  PINMODE.defl="PINMODE.OUTPUT"
+    export function pinMode(parameter: any, block: any) {
+        let pin=parameter.PININPUT.code;
+        let mode=parameter.PINMODE.code;
+
+        if(pin.charAt()==`\"`) pin=	pin.substring(1,pin.length-1)
+        console.log(pin)
+        Generator.addCode(`pinMode(${pin}, ${mode});`);
 
     }
 
@@ -47,7 +67,7 @@ namespace toolbox {
     //% PIN1.shadow="dropdownRound"  PIN1.options="PIN_DigitalRead"
     export function digitalRead(parameter: any, block: any) {
         let pin=parameter.PIN1.code;
-        Generator.addCode([`digitalRead(${pin})`,Generator.ORDER_UNARY_POSTFIX]);
+        Generator.addCode([`digitalRead1(${pin})`,Generator.ORDER_UNARY_POSTFIX]);
 
     }
        
@@ -55,7 +75,7 @@ namespace toolbox {
     //% PIN2.shadow="dropdownRound"  PIN2.options="PIN_AnalogRead"
     export function analogRead(parameter: any, block: any) {
         let pin=parameter.PIN2.code;
-        Generator.addCode([`analogRead(${pin})`,Generator.ORDER_UNARY_POSTFIX]);
+        Generator.addCode([`analogRead1(${pin})`,Generator.ORDER_UNARY_POSTFIX]);
 
     }
 
@@ -65,7 +85,7 @@ namespace toolbox {
     export function analogWrite(parameter: any, block: any) {
         let pin=parameter.PIN3.code;
         let pwm=parameter.PWM.code;
-        Generator.addCode(`analogWrite(${pin},${pwm});`);
+        Generator.addCode(`analogWrite1(${pin},${pwm});`);
 
     }
 
@@ -75,7 +95,7 @@ namespace toolbox {
     export function digitalWrite(parameter: any, block: any) {
         let pin=parameter.PIN4.code;
         let val=parameter.VAL.code;
-        Generator.addCode(`digitalWrite(${pin},${val});`);
+        Generator.addCode(`digitalWrite1(${pin},${val});`);
 
     }
 
@@ -83,5 +103,7 @@ namespace toolbox {
     export function noteSep2() {
 
     }
+
+
 
 }

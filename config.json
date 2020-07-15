@@ -13,11 +13,11 @@
 	"isBoard": false,
 	"id": "toolbox",
 	"platform": ["win", "mac", "web"],
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"asset": {
 		"arduinoC": {
 			"dir": "arduinoC/",
-			"version": "0.0.2",
+			"version": "0.0.3",
 			"board": ["microbit", "esp32","arduino","arduinonano","leonardo","mega2560"],
 			"main": "main.ts"
 		}
